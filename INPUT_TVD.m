@@ -111,7 +111,7 @@ elseif NVESSEL==55
     
     
 elseif NVESSEL==37
-    a=1.3;
+    a=0;
     Period=0.82;      % 37 vessel
     Rho=1050;         % 37 vessel density
     mju=2.5e-3;       % Dynamic Viscosity   %Pa*s
