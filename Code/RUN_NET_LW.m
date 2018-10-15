@@ -291,7 +291,7 @@ end  %END time loop -itau loop
 %% Final plot of P and V in first and mid cell at each vessel
 %===============================
 for iii=1:NVESSEL
-        if iii==2 || iii==10 || iii==12 || iii==17 || iii==20 || iii==22 || iii==24 || iii==26
+%        if iii==2 || iii==10 || iii==12 || iii==17 || iii==20 || iii==22 || iii==24 || iii==26
         figure(iii+NVESSEL+2)
         Casenum = int2str(iii);
         subplot(2,2,1)
@@ -321,7 +321,7 @@ for iii=1:NVESSEL
         plot(AT, AREAN(iii,:)*10000,'Linewidth',2); title(['Vessel ', Casenum, ' Mid-Seg AREA (cm^2) 55']); % was 7.4506e-04
         grid off 
         hold on
-        end
+%        end
 %         fig=figure(iii+NVESSEL);
 %         saveas(fig,sprintf('FIG%d.fig',iii))
 end
