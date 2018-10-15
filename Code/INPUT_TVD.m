@@ -95,8 +95,8 @@ if NVESSEL==26
         Pout=4400;    % cappilary pressure (Best Area Alastruey 2016)
         a=2;          % Fung parameter
         nonconstant=0;
-        Rmultiply=1;  % FOR cappilary - resistance multiplier 
-        Cmultiply=1;  % FOR cappilary - compliance multiplier    
+        Rmult=1;  % FOR cappilary - resistance multiplier 
+        Cmult=1;  % FOR cappilary - compliance multiplier    
         %
 elseif NVESSEL==55
     a=1.3;
