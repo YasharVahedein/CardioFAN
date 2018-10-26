@@ -358,7 +358,7 @@ for itau=1:100000000    %Run Until reahcing TIME
         AUN(iv,itau)=AU(iv,round(ncell/2));
         APN(iv,itau)=AP(iv,round(ncell/2));
         if PTTfunc(1)==1 && iv<=PTTfunc(5)
-            PWV2(iv,1:ncell,itau)=AU(iv,1:ncell)+CMK(iv,1:ncell).*(exp(a*((sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell))-1).^2))/2).*sqrt(sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell)).*(1+2*a*(sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell))-1).^2));
+            PWV2(iv,1:ncell,itau)=AU(iv,1:ncell)+CMK(iv,1:ncell).*(exp(a*((sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell))-1).^2)/2)).*sqrt(sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell)).*(1+2*a*(sqrt(AREA(iv,1:ncell)./AREAZ(iv,1:ncell))-1).^2));
         end
     end
     

@@ -37,10 +37,10 @@ for Stime=STARTtime:FINISHtime
         end
     end
     
-    dx=HMESH(1);
+    dx=HMESH(pttSTAvessel1);
     %Accumulate PTT by subsegments
     PTT=dx/PWV2(pttSTAvessel1,1,1+Stime);  %time required to pass cell 1
-    for cellnum=2:NCELL(1)
+    for cellnum=2:NCELL(pttSTAvessel1)
         %basic PWV array in time at i-th cell
         PWVbas(1:imax)=PWV2(2,cellnum,1+Stime:imax+Stime);
         PWVi = interp1(AT1(1:imax),PWVbas(1:imax),PTT+AT1(1),'linear'); %PWV at the center of next cell
@@ -70,7 +70,7 @@ casenum2=int2str(pttFINvessel2);
 hold on
 subplot(2,1,1)
 plot(AT(STARTtime:FINISHtime), APTT(STARTtime:FINISHtime),'k','Linewidth',3); title(['Vessel ',casenum1,' to ',casenum2, ' PTT as a Function of starting point']); % was 7.4506e-04
-xlabel('Start Time of PTT Calculation (s)'); ylabel('PTT (s)');
+xlabel('Start Time of PTT Calculation'); ylabel('Pulse Transit Time (s)');
 dim = [.2 .5 .3 .3];
 AVE=num2str(mean(APTT(STARTtime:FINISHtime)));
 STD=num2str(std(APTT(STARTtime:FINISHtime)));
@@ -84,7 +84,6 @@ subplot(2,1,2)
 plot(AT(STARTtime:FINISHtime), AU0(pttSTAvessel1,STARTtime:FINISHtime).*AREA0(pttSTAvessel1,STARTtime:FINISHtime)*1000000,'k','Linewidth',1); title(['Vessel ', casenum1, ' Inlet Flow Rate']); % was 7.4506e-04
 grid off
 hold on
-
         % figure(5)
 % plot(2*2000*(count/20)*0.25/pi,APTT,'gs','LineWidth',10);
 % xlabel('Stroke Volume (ml/s)'); ylabel('Pulse Transit Time (s)')

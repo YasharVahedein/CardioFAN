@@ -76,8 +76,8 @@ if NVESSEL==26
             5.27 5.31 5.41 5.46 5.50 5.57 5.76 5.87 5.85 5.84...
             7.54 7.77 9.18 9.43 8.64 8.67];  %m/s
     else
-        CMK1=repmat(4.56,1,26);  %m/s
-        CMK4=repmat(4.56,1,26);  %m/s
+        CMK1=repmat(4.56,1,26)/1.045;  %m/s
+        CMK4=repmat(4.56,1,26)/1.045;  %m/s
     end
     %Thickness of the Vessel Wall
     h=[0.51].*1e-3;

@@ -60,13 +60,14 @@ Pzero=0;               % Extramural pressure
 Pd=0;                  % Diastlic pressure added to initial pressure option 2
 
 %* PULSE TRANSIT TIME (PTT) calculation on arbitrary path
-PTTcalculation=1;      % 1 for turning on PTT calculation, 0 turn off
+PTTcalculation=0;      % 1 for turning on PTT calculation, 0 turn off
 if PTTcalculation==1   % if 1 then define the properties of arbitrary path and start time along the waveform
-    STARTtime=15000;   % Global start time for PTT calculation
-    FINISHtime=17000;  % Global finish time
+    STARTtime=11000;   % Global start time for PTT calculation
+    FINISHtime=18000;  % Global finish time
     pttSTAvessel1=2;   % Starting vessel number
     pttFINvessel2=19;  % Final vessel number
     LLLmax=0.285;      %for calculated value based on vessel number use 0
+%     LLLmax=0;
 end
 
 %* Visual settings: Geometry Schematics Line Thickness Thresholds + Plot Acoustic Solution Results
@@ -96,26 +97,26 @@ acousticplot=0;        % Acoustic model PLOTs Yes=1, No=0
 Rcorrect=1.00001;        %55 and 37 vessel cases -outlet resistance correction
 if NVESSEL==26
     BestP=1;           % For best AREA approx put to zero
-    a=6;               % %*****FUNG parameter*****%
+    a=6;                     % %*****FUNG parameter*****%
     NcellT=300;
-    Pout=9200;         % Pressure fitted (Best Pressure Alastruey 2016)  
+    Pout=9200;               % Pressure fitted (Best Pressure Alastruey 2016)  
     Pzero=10000;
-    TPeriod=0.98;       % Duration/Period of heart beat ic output  %s   -  ALASTUEY 2016
-    Rho=1060;          % 26 Vessel density of the flow %kg/m^3
-    mju=3.5e-3;        % Dynamic Viscosity   %Pa*s
-    r0=(12.4e-3);      % Root Radius %m -  ALASTUEY 2016
-    Rcorrect=0.6;      %outlet resistance correction for 26 vessels case Alastruey-2016
+    TPeriod=0.98;            % Duration/Period of heart beat ic output  %s   -  ALASTUEY 2016
+    Rho=1060;                % 26 Vessel density of the flow %kg/m^3
+    mju=3.5e-3;              % Dynamic Viscosity   %Pa*s
+    r0=(12.4e-3);            % Root Radius %m -  ALASTUEY 2016
+    Rcorrect=0.6;            %outlet resistance correction for 26 vessels case Alastruey-2016
     Rmult=1;                 %resistance multiplier , set 1 for no multiplier
-    Cmult=1.4;                 %compliance multiplier , set 1 for no multiplier
-    nonconstant=0;     % 1 for nonconstant and 0 for constant CMK
+    Cmult=1.4;               %compliance multiplier , set 1 for no multiplier
+    nonconstant=0;           % 1 for nonconstant and 0 for constant CMK
     correctcompliance=1;     %correcting compliance using total resistance
     RCR=1;
     if BestP==0
-        Pout=4400;    % cappilary pressure (Best Area Alastruey 2016)
-        a=0;          % Fung parameter 2
+        Pout=4400;           % cappilary pressure (Best Area Alastruey 2016)
+        a=0;                 % Fung parameter 2
         nonconstant=0;
-        Rmult=3.2;  % FOR cappilary - resistance multiplier
-        Cmult=1.6;  % FOR cappilary - compliance multiplier
+        Rmult=3.2;           % FOR cappilary - resistance multiplier
+        Cmult=1.6;           % FOR cappilary - compliance multiplier
     end
     
 elseif NVESSEL==55
