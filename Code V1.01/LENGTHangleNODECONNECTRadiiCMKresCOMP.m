@@ -89,7 +89,7 @@ if NVESSEL==26
     RESIST=[0.02644628/(69.1/100) 0.02644628/(19.3/100) 0.02644628/(5.2/100) 0.02644628/(6.4/100)].*1e9;   % Pa s/m^3
     
     % COMPLIANCE=[1.32]/(133.3*(1.e8)); %m^3/Pa see last lines of code
-    if Pout==9200
+    if Pout~=4400
         COMPLIANCE=12.1*(1e-9);   % ALASTRUEY 2016 - if Pout=9.3 kPa
     elseif Pout==4400
         COMPLIANCE=10.3*(1e-9); % ALASTRUEY 2016 - if Pout=4.4 kPa
