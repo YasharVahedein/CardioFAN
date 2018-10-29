@@ -47,7 +47,7 @@ close all; clc;
 %=============================================
 %% READ INPUT FUNCTION
 %=============================================
-[SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK,XX ,NODE_CONNECT,Pfit]=INPUT_TVD;
+[SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK,XX ,NODE_CONNECT,Pfit]=INPUT;
 
 %=============================================
 % Unpack SCALAR
@@ -333,7 +333,7 @@ for iii=1:NVESSEL
         hold on
         
         %calculate the vessel area
-        figure(iii+NVESSEL+2+26)
+        figure(iii+NVESSEL+2+NVESSEL)
         Casenum = int2str(iii);
         subplot(2,1,1)
         plot(AT, AREA0(iii,:)*10000,'k','Linewidth',1); title(['Vessel ', Casenum, ' Inlet AREA (cm^2)']); % was 7.4506e-04
