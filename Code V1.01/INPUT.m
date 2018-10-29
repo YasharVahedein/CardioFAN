@@ -1,4 +1,4 @@
-function [SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK, XX,NODE_CONNECT,Pfit]=INPUT_TVD
+function [SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK, XX,NODE_CONNECT,Pfit]=INPUT
 %**************
 % MIT License
 % 
@@ -168,7 +168,7 @@ A0=pi*r0^2;       %Root Reference Area   %m^2
 %% DEFINE Terminal Resistance and Compliance Arrays
 %% DEFINE Radii, Area, CMK, Thickness
 %=========================================================
-[LL,ALF,NODE_CONNECT,ARZ1,ARZ4,AREAZ1,AREAZ4,CMK1,CMK4,h,RESIST,COMPLIANCE]=LENGTHangleNODECONNECTRadiiCMKresCOMP(NVESSEL,Pout,nonconstant);
+[LL,ALF,NODE_CONNECT,ARZ1,ARZ4,AREAZ1,AREAZ4,CMK1,CMK4,h,RESIST,COMPLIANCE]=LaNrCrC(NVESSEL,Pout,nonconstant);
 %LL  - Vessel lengths
 %ALF - Vessel angles of orientations with respect to coordinate system
 %NODE_CONNECT(inode=1:NNODE,ivup,ivdn1,ivdn2)
