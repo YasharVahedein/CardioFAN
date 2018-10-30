@@ -1,4 +1,4 @@
-function [SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK, XX,NODE_CONNECT,Pfit]=INPUT
+function [SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK, XX,NODE_CONNECT,Pfit]=INPUT(KTVD)
 %**************
 % MIT License
 % 
@@ -49,7 +49,6 @@ dtau=1;                %time-step size initialize
 CFL=0.85;              %CFL number, for TVD use lower CFL (use 0.4)
 NcellT=150;            %NUMBER OF ALL CELLS (for TVD use more mesh elements)
 Nmin=6;                %Min # of cells for any vessel %Nmin=8 for TVD
-KTVD=0;                %TVD or LW descritization scheme, 1=Yes, 0=LW method
 NVESSEL=26;            % ***** NUMBER OF VESSELS ****** %
 
 %* For initialization(DEFINED BASED ON EACH CASE)
@@ -306,7 +305,7 @@ if INITopt==1
     SCALAR0=[Rho, KR, NVESSEL, NNODE,KTVD,CFL,dtau,NTAU/(TIME/TPeriod)*4,IVinlet,NEXIT,T,TPeriod,TIME,RCR,Pzero];
     ARRAY1D0=[NCELL, HMESH, LL, ALF, IVexit, RT,RC,RP,COMPLIANCEFINAL];
     % Calculate acoustic solution
-    [p(1:NVESSEL, 1:NCELLmax),u(1:NVESSEL, 1:NCELLmax)]=RUN_NET_ACOU_INIT(SCALAR0,ARRAY1D0,AP,AU,AREAZ,CMK,XX,NODE_CONNECT,Pfit,Rmult,Cmult,Pout,acousticplot); %%%%%%IMPORTANT
+    [p(1:NVESSEL, 1:NCELLmax),u(1:NVESSEL, 1:NCELLmax)]=ACOU_INIT(SCALAR0,ARRAY1D0,AP,AU,AREAZ,CMK,XX,NODE_CONNECT,Pfit,Rmult,Cmult,Pout,acousticplot); %%%%%%IMPORTANT
     AU=u(1:NVESSEL, 1:NCELLmax);
     AP=p(1:NVESSEL, 1:NCELLmax)+Pd;
     for iv=1:NVESSEL

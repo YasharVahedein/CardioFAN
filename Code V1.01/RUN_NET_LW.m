@@ -47,7 +47,8 @@ close all; clc;
 %=============================================
 %% READ INPUT FUNCTION
 %=============================================
-[SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK,XX ,NODE_CONNECT,Pfit]=INPUT;
+KTVD=0;                %TVD or LW descritization scheme, 1=Yes, 0=LW method
+[SCALAR,ARRAY1D,PTTfunc,AP,AU,AREA,AREAZ,CMK,XX ,NODE_CONNECT,Pfit]=INPUT(KTVD);
 
 %=============================================
 % Unpack SCALAR
