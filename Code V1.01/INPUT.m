@@ -67,6 +67,7 @@ if PTTcalculation==1   % if 1 then define the properties of arbitrary path and s
     pttSTAvessel1=2;   % Starting vessel number
     pttFINvessel2=18;  % Final vessel number
     LLLmax=0.285;      %for calculated value based on vessel number use 0
+%    LLLmax=0;          %calculated based on vessel number
 end
 
 %* Visual settings: Geometry Schematics Line Thickness Thresholds + Plot Acoustic Solution Results
@@ -175,7 +176,7 @@ A0=pi*r0^2;       %Root Reference Area   %m^2
 
 % maximum length for PTT
 if PTTcalculation==1 && LLLmax==0 
-    LLLmax=sum(pttSTAvessel1:pttSTAvessel2);
+    LLLmax=sum(pttSTAvessel1:pttFINvessel2);
 end
 
 %% Automatically finds inlet and exit vessels
