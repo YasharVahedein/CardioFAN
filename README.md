@@ -1,9 +1,11 @@
 # CardioFAN
 Finite volume-based monotone code for blood flow hemodynamics simulations!
 
+Choose between TVD LAX_Wendroff and regular LAX_Wendroff codes by selecting KTVD=1 or 0 in "main.m".
+
 The code is ready to run for 55 vessels (Sherwina and Alastruey et al. 2012), 37 vessels (Matthys et al 2007) and 26 vessels cases (Alastruey et al. 2016)
 
-Uer can check these by setting NVESSEL to any of these options (55,37,26)! for arbitrary case the following functions should be altered.
+User can check these by setting NVESSEL to any of these options (55,37,26)! for arbitrary case the following functions should be altered.
 
 RUN_NET_LW is a LAX_Wendroff based code
 RUN_NET_TVD is a TVD LAX_Wendroff based code
