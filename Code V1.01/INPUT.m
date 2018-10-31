@@ -176,7 +176,7 @@ A0=pi*r0^2;       %Root Reference Area   %m^2
 
 % maximum length for PTT
 if PTTcalculation==1 && LLLmax==0 
-    LLLmax=sum(pttSTAvessel1:pttFINvessel2);
+    LLLmax=sum(LL(pttSTAvessel1:pttFINvessel2));
 end
 
 %% Automatically finds inlet and exit vessels
