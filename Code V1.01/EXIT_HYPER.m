@@ -49,7 +49,15 @@ if RCR==0
     APBN=(1+RES)*YN/2*rho*cmk;
     AUBN=(1-RES)*YN/2;
     AREABN=A0N*(((APBN-Pzero)/(2*rho*(cmk^2))*(1-a*((APBN-Pzero)/(2*rho*(cmk^2)))^2))+1)^2;
-    
+
+%     %%option2
+%     AUBN=(APBNp-Pout)/(RT*AREABNp);
+%     YN=AUN+APN/rho/cmk;
+%     APBN=(YN-AUBN)*rho*cmk;
+%     AREABN=A0N*(((APBN-Pzero)/(2*rho*(cmk^2))*(1-a*((APBN-Pzero)/(2*rho*(cmk^2)))^2))+1)^2; %AREABN=A0N*(APBN/(2*rho*cmk^2)+1)^2;
+%     AREABNp=AREABN;
+%     APBNp=APBN;
+
 elseif RCR==1
     %% If Resistances not available
     %    phi=2^(-1/3);                                  %IF R  not available
