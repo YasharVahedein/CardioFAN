@@ -161,7 +161,6 @@ KR=-22*pi*nju;    %Coefficient for the viscous source term
 %% DEFINE Function related to Flow(t)
 %=========================================================
 A0=pi*r0^2;       %Root Reference Area   %m^2
-%comment out the FLOWINPUT function if it is defined in UFUN
 [A,AU1,Pfit]=FLOWINPUT(TIME,TPeriod,A0,NVESSEL);
 
 
