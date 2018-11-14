@@ -186,6 +186,8 @@ A=[0.00E+00	9.259259
 
 % Pfit=polyfit(A(1:56,1),A(1:56,2),17);
 Pfit= fit( A(1:56,1),A(1:56,2), 'smoothingspline');
+else
+    Pfit=0;
 end
 
 
