@@ -16,6 +16,8 @@ LaNrCrC is where you define all the properties related to the network, such as, 
 
 FLOWINPUT is where you can define your own flow input or change the currently available inputs picked from Alastruey and Figuera et al.
 
+UFUN is the place to define velocity profile or assign the fitted values given in FLOWINPUT (options are ready to use)
+
 PTTcalc will calculate PTT in from a starting time step (which varries from the initial starttime (defined at INPUT) plus 5000 time steps). 
 If user encounters errors running the code, it is due to small total TIME at INPUT and can be fixed by one of the following methods:
 1) Decrease the number of time-steps from 5000 in PTT 
