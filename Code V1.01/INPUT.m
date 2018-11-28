@@ -62,12 +62,11 @@ Pd=0;                  % Diastlic pressure added to initial pressure option 2
 %* PULSE TRANSIT TIME (PTT) calculation on arbitrary path
 PTTcalculation=1;      % 1 for turning on PTT calculation, 0 turn off
 if PTTcalculation==1   % if 1 then define the properties of arbitrary path and start time along the waveform
-    STARTtime=20000;   % Global start time for PTT calculation (caution on large values)
-    FINISHtime=23000;  % Global finish time (caution on large values)
+    cycle=2;
     pttSTAvessel1=2;   % Starting vessel number
-    pttFINvessel2=18;  % Final vessel number
-    LLLmax=0.285;      %for calculated value based on vessel number use 0
-%    LLLmax=0;          %calculated based on vessel number
+    pttFINvessel2=18;   % Final vessel number
+    LLLmax=0.285;          %for calculated value based on vessel number use 0
+    %    LLLmax=0;          %calculated based on vessel number
 end
 
 %* Visual settings: Geometry Schematics Line Thickness Thresholds + Plot Acoustic Solution Results
@@ -324,7 +323,9 @@ SCALAR=[Rho,KR, NVESSEL, NNODE,KTVD,CFL,dtau,NTAU,IVinlet,NEXIT,T,TPeriod,TIME,a
 'ARRAY1D  from INPUT'
 ARRAY1D=[NCELL, HMESH, LL, ALF,  IVexit, RT,RC,RP,COMPLIANCEFINAL];
 if PTTcalculation==1
-    PTTfunc=[PTTcalculation,STARTtime,FINISHtime,pttSTAvessel1,pttFINvessel2,LLLmax];
+    STARTtime=0;       % Initialize global start time for PTT calculation
+    FINISHtime=0;      % Initialize global finish time
+    PTTfunc=[PTTcalculation,STARTtime,FINISHtime,pttSTAvessel1,pttFINvessel2,LLLmax,cycle];
 else
     PTTfunc=[PTTcalculation];
 end
