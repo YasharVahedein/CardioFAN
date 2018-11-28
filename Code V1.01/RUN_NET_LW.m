@@ -120,7 +120,7 @@ end
 %=============================================
 %% Time loop Starts
 %=============================================
-AT(1)=0;  t=0;          %Initialize time and its array
+    AT(1)=0;  t=0;   counterSTA=0; counterEND=0;       %Initialize time and PTT values
 
 for itau=1:100000000    %Run Until reahcing TIME
     
@@ -144,6 +144,17 @@ for itau=1:100000000    %Run Until reahcing TIME
     % Time advancing
     %=============================================
     t=t+dtau;                                           % time
+            %for PTT calculation
+            if PTTfunc(1)==1
+                if t>PTTfunc(7)*TT && counterSTA==0
+                    PTTfunc(2)=itau-300;
+                    counterSTA=counterSTA+1;
+                elseif  t>(PTTfunc(7)+1)*TT && counterEND==0
+                    PTTfunc(3)=itau-300;
+                    counterEND=counterEND+1;
+                end
+            end
+            %
     AT(itau)=t;                                         %ARRAY of Time
     if(t>TIME) || imag(t)~=0
         AT=AT(1:itau-1);                                %Accumulate time array and break when it ends
