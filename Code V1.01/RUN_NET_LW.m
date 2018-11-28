@@ -146,10 +146,10 @@ for itau=1:100000000    %Run Until reahcing TIME
     t=t+dtau;                                           % time
             %for PTT calculation
             if PTTfunc(1)==1
-                if t>PTTfunc(7)*TT && counterSTA==0
+                if counterSTA==0 && t>PTTfunc(7)*TT
                     PTTfunc(2)=itau-300;
                     counterSTA=counterSTA+1;
-                elseif  t>(PTTfunc(7)+1)*TT && counterEND==0
+                elseif  counterEND==0 && t>(PTTfunc(7)+1)*TT
                     PTTfunc(3)=itau-300;
                     counterEND=counterEND+1;
                 end
