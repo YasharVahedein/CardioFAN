@@ -205,6 +205,6 @@ for i=1:2000
     t=t+tmax/2000;                            % current time update
 end
 figure(1)
-plot(At,AU1.*A0*1000000,'linewidth',2);xlabel('Time (sec)'); ylabel('U');
-title('Inlet Velocity Time History'); grid on
+plot(At,AU1.*A0*1000000,'linewidth',2);xlabel('Time (sec)'); ylabel('Q (mL/s)');
+title('Inlet Flow Time History'); grid on
 end
