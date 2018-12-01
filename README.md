@@ -1,4 +1,7 @@
 # CardioFAN
+DOI: 10.5281/zenodo.1807129
+https://doi.org/10.5281/zenodo.1807129
+
 Finite volume-based monotone code for blood flow hemodynamics simulations!
 
 Choose between TVD LAX_Wendroff and regular LAX_Wendroff codes by selecting KTVD=1 or 0 in "main.m".
