@@ -76,7 +76,7 @@ acousticplot=0;        % Acoustic model PLOTs Yes=1, No=0
 
 %%* If not using 26,55 or 37 vessels cases, uncomment & define lines 65-79
 %     a=0;                     %*****FUNG parameter*****% a=0:means regular Hook & Laplace Law
-%     Period=0.96;             % Duration/Period of heart beat ic output  %s   -  ALASTUEY 2016
+%     TPeriod=0.96;             % Duration/Period of heart beat ic output  %s   -  ALASTUEY 2016
 %     Rho=1060;                % 26 Vessel density of the flow %kg/m^3
 %     mju=3.5e-3;              % Dynamic Viscosity   %Pa*s
 %     r0=(12.4e-3);            % Root Radius %m -  ALASTUEY 2016

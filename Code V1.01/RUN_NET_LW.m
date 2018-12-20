@@ -94,7 +94,7 @@ NCELLMAX=max(NCELL);
 %=============================================%
 for i=1:NEXIT
     iv=IVEXIT(i);  nlast=NCELL(iv);
-    AREABNp(iv)=AREA(iv);
+    AREABNp(iv)=AREA(iv,nlast);
     APBNp(iv)=AP(iv,nlast);
     AUBNp(iv)=AU(iv,nlast);
 end
