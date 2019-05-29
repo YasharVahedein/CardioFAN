@@ -2,7 +2,10 @@
 DOI: 10.5281/zenodo.1807129
 https://doi.org/10.5281/zenodo.1807129
 
-Finite volume-based monotone code for blood flow hemodynamics simulations!
+Accompannied article to cite:
+Seyed Vahedein, Y., Liberson, A.S., 2019. CardioFAN: open source platform for noninvasive assessment of pulse transit time and pulsatile flow in hyperelastic vascular networks. Biomech Model Mechanobiol. https://doi.org/10.1007/s10237-019-01163-z
+
+Finite volume-based monotone code for blood flow hemodynamics simulations and "Pulse Transit Time" (PTT) calculation!
 
 Choose between TVD LAX_Wendroff and regular LAX_Wendroff codes by selecting KTVD=1 or 0 in "main.m".
 For Viscohyperelastic go to the designated folder and execute RUN_NET_VISCOHYPER.
